@@ -8,12 +8,16 @@ body {
 .header {
   background-color: rgb(255, 77, 107);
   color: white;
-  padding: 10px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  align-items: center;
   padding-left: 45px;
   padding-right: 45px;
+  margin-bottom: 3rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 20px 0 rgba(255, 6, 77, 0.456);
 }
 
 /* Search Bar */
@@ -76,8 +80,7 @@ input {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 0.25rem;
-  margin-top: 1rem;
+  gap: 3rem;
   padding-left: 45px;
   padding-right: 45px;
 }
@@ -85,16 +88,23 @@ input {
 .card {
   border: 1px solid black;
   background-color: white;
-  padding: 20px;
+  padding: 150px;
+  cursor: pointer;
+  border-radius: 9px;
+}
+.card:hover {
+  box-shadow: 0 0 20px 0 rgba(255, 6, 77, 0.456);
 }
 
 .card > .data-header {
   margin-bottom: 0.25rem;
+  max-width: auto;
   text-align: center;
+  font-size: 1.3rem;
 }
 
 .card > .data-body {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   color: #777;
   text-align: center;
 }
@@ -103,7 +113,6 @@ input {
   display: none;
 }
 
-/* Loader */
 /* Loader */
 
 .spinner:not([hidden]) {
@@ -144,12 +153,55 @@ input {
 /* Footer */
 .footer {
   background-color: rgb(255, 77, 107);
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
   color: white;
-  margin-top: 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 3rem;
 }
 .footer-para {
   font-size: 18px;
   color: white;
   text-align: center;
+}
+
+/* Responsive for Mobile Screens */
+
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  .header h2 {
+    font-size: 16px;
+  }
+  .header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #search {
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .user-cards {
+    display: grid;
+    grid-template-columns: none;
+    gap: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .card {
+    padding: 90px;
+  }
+
+  .footer-para {
+    font-size: 14px;
+  }
 }
